@@ -1,0 +1,1 @@
+C:\Users\shiji\Desktop\iotbluetoothserial-master\GenericBluetoothSerialUWApp\GenericBluetoothSerialUWApp.csproj;arm

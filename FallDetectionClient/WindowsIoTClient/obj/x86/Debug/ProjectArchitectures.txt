@@ -1,0 +1,1 @@
+C:\Users\shiji\Desktop\Arduino Challenge\UWP\FallDetectionClient\WindowsIoTClient\WindowsIoTClient.csproj;x86

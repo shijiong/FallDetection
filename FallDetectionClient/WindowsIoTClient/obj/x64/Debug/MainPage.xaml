@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="WindowsIoTClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsIoTClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:ConnectionId='1' x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,5" d:IsLocked="True">
+            <TextBlock x:ConnectionId='33' x:Name="Receiver" Style="{StaticResource CaptionTextBlockStyle}" Margin="12,0" Text="Receiver" Foreground="#FF16AA07" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='34' x:Name="Sensor_Monitor" Text="Sensor Monitor" Margin="9,-7,0,0" Style="{StaticResource TitleTextBlockStyle}" FontSize="30" Foreground="#FFEC524B" d:IsLocked="True"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:ConnectionId='2' x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" d:IsLocked="True">
+            <TextBlock x:ConnectionId='4' x:Name="Accel_x_axis" HorizontalAlignment="Left" Margin="22,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="X"/>
+        		<Run Text=" "/>
+        		<Run Text=":"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='5' x:Name="Accel_y_axis" HorizontalAlignment="Left" Margin="22,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="Y"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='6' x:Name="Accel_z_axis" HorizontalAlignment="Left" Margin="22,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="Z"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='7' x:Name="Gyro_x_axis" HorizontalAlignment="Left" Margin="22,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="X"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='8' x:Name="Gyro_y_axis" HorizontalAlignment="Left" Margin="22,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="Y"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='9' x:Name="Gyro_z_axis" HorizontalAlignment="Left" Margin="22,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="78" FontSize="26.667" Text="Z :" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='10' x:Name="Mag_x_axis" HorizontalAlignment="Left" Margin="24,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="76" FontSize="26.667" Text="X :" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='11' x:Name="Mag_y_axis" HorizontalAlignment="Left" Margin="24,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="76" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="Y"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='12' x:Name="Mag_z_axis" HorizontalAlignment="Left" Margin="24,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="76" FontSize="26.667" d:IsLocked="True">
+        		<Run Text="Z"/>
+        		<Run Text=" :"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='13' x:Name="Pressure" HorizontalAlignment="Left" Margin="2,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="205" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Pressure"/>
+        		<Run Text=" (hPa)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='14' x:Name="Temperature" HorizontalAlignment="Left" Margin="2,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="217" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Temperature"/>
+        		<Run Text=" (C)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='15' x:Name="Humidity" HorizontalAlignment="Left" Margin="4,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="203" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Humidity"/>
+        		<Run Text=" (m)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='16' x:Name="Date_Time" HorizontalAlignment="Left" Margin="4,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="158" FontSize="26.667" Text="Date Time" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='17' x:Name="Mag_Title" HorizontalAlignment="Left" Margin="2,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="276" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Magnetometer"/>
+        		<Run Text=" (uT)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='18' x:Name="Gyro_Title" HorizontalAlignment="Left" Margin="2,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="276" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Gyroscope"/>
+        		<Run Text=" (rad/s)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='19' x:Name="Accel_Title" HorizontalAlignment="Left" Margin="2,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="326" FontSize="26.667" FontWeight="Bold" Foreground="#FFFF00E8" d:IsLocked="True">
+        		<Run Text="Accelerometer" Foreground="#FFFF00E8"/>
+        		<Run Text=" (m/s^2)"/>
+            </TextBlock>
+            <TextBlock x:ConnectionId='20' x:Name="Accel_x_text" HorizontalAlignment="Left" Margin="80,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='21' x:Name="Accel_y_text" HorizontalAlignment="Left" Margin="80,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='22' x:Name="Accel_z_text" HorizontalAlignment="Left" Margin="80,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='23' x:Name="Gyro_x_text" HorizontalAlignment="Left" Margin="80,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='24' x:Name="Gyro_y_text" HorizontalAlignment="Left" Margin="80,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='25' x:Name="Gyro_z_text" HorizontalAlignment="Left" Margin="80,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='26' x:Name="Mag_x_text" HorizontalAlignment="Left" Margin="80,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='27' x:Name="Mag_y_text" HorizontalAlignment="Left" Margin="80,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='28' x:Name="Mag_z_text" HorizontalAlignment="Left" Margin="80,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='29' x:Name="Pressure_text" HorizontalAlignment="Left" Margin="224,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='30' x:Name="Temperature_text" HorizontalAlignment="Left" Margin="224,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='31' x:Name="Humidity_text" HorizontalAlignment="Left" Margin="224,449,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="86" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock x:ConnectionId='32' x:Name="Date_time_text" HorizontalAlignment="Left" Margin="185,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="261" FontSize="26.667" d:IsLocked="True"/>
+
+        </Grid>
+        <Button x:ConnectionId='3' x:Name="Receive" Content="Receive" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="176,525,0,0" Grid.Row="1"                       Background="#FF51C11C" d:IsLocked="True"/>
+    </Grid>
+</Page>
+

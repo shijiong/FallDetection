@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="GenericBluetoothSerialUWApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GenericBluetoothSerialUWApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <CollectionViewSource x:ConnectionId='1' x:Name="PairedDevices"/>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='2' x:Name="Layout">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="LightCoral" Offset="0.75"/>
+                <GradientStop Color="LightYellow" Offset="0.5"/>
+                <GradientStop Color="LightYellow" Offset="0.25"/>
+                <GradientStop Color="LightSkyBlue" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:ConnectionId='3' x:Name="MyTitle" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="Wrap" Text="Universal Windows Fall Detection App " VerticalAlignment="Top" Width="800"/>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:ConnectionId='21' x:Name="ID" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="Wrap" Text="Id: " VerticalAlignment="Top" Width="28"/>
+                    <TextBlock x:ConnectionId='22' x:Name="TxtBlock_SelectedID" HorizontalAlignment="Left" Height="25" Margin="10" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="956"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:ConnectionId='19' x:Name="BTName" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" Width="50"/>
+                    <TextBlock x:ConnectionId='20' x:Name="textBlockBTName" HorizontalAlignment="Left" Height="35" Margin="10,10,0,10" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="1004" ToolTipService.ToolTip=""/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='15' x:Name="buttonRefresh" Content="Refresh" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                      IsEnabled="True"/>
+                <Button x:ConnectionId='16' x:Name="buttonDisconnect" Content="Disconnect" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                      IsEnabled="False"/>
+                <Button x:ConnectionId='17' x:Name="buttonSend" Content="Send" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                       IsEnabled="False"/>
+                <Button x:ConnectionId='18' x:Name="buttonClearSendText" Content="Clear Send" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                      IsEnabled="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:ConnectionId='11' x:Name="buttonStartRecv" Content="Start Recv" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                      IsEnabled="False"/>
+                <Button x:ConnectionId='12' x:Name="buttonStopRecv" Content="Stop Recv" HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                      IsEnabled="False"/>
+                <Button x:ConnectionId='13' x:Name="ProcessButton" Content="Process"  HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                             IsEnabled="False"/>
+                <Button x:ConnectionId='14' x:Name="AzureButton" Content="Upload"  HorizontalAlignment="Left" Height="49" Margin="10" VerticalAlignment="Top" Width="Auto"                           IsEnabled="False"/>
+            </StackPanel>
+
+            <ListBox x:ConnectionId='4' x:Name="ConnectDevices" ItemsSource="{Binding Source={StaticResource PairedDevices}}" Background="Gray" Margin="10"                                            
+                    Width="Auto"
+                    Height="Auto"
+                    >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:ConnectionId='9' x:Name="SendText" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="NoWrap"  Text="Send: " VerticalAlignment="Top" Width="50"/>
+                <TextBox x:ConnectionId='10' x:Name="textBoxSendText" Text="" HorizontalAlignment="Left" Height="30" Margin="10" TextWrapping="Wrap"  VerticalAlignment="Top" Width="400" ToolTipService.ToolTip="" AcceptsReturn="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:ConnectionId='7' x:Name="RecvdText" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="NoWrap" Text="Recvd: " VerticalAlignment="Top" Width="50"/>
+                <TextBlock x:ConnectionId='8' x:Name="textBoxRecvdText" HorizontalAlignment="Left" Height="50" Width="400" Margin="10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip=""/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:ConnectionId='5' x:Name="StateText" HorizontalAlignment="Left" Height="23" Margin="10" TextWrapping="NoWrap" Text="State: " VerticalAlignment="Top" Width="50"/>
+                <TextBlock x:ConnectionId='6' x:Name="textStateText" HorizontalAlignment="Left" Height="30" Width="400" Margin="10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" ToolTipService.ToolTip=""/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>
+
