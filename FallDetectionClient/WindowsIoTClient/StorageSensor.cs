@@ -24,8 +24,8 @@ namespace WindowsIoTClient
             
         }
 
-        private string _accountName = "myiotservicebusstorage"; //Add your azure storage account name
-        private string _key = "iNGhr9f+2pCUcVO/jrbokvwKhgIGjwNXLQzuwoqygW0gCTGlpJbPUvtmhI/g3epJ3sq3v0os5TS8KsGklEgmpA==";	//Add your storage account primary access key
+        private string _accountName = ""; //Add your azure storage account name
+        private string _key = "";	//Add your storage account primary access key
         private StorageCredentials credentials;
         private CloudStorageAccount storageAccount;
         private CloudTableClient tableClient;

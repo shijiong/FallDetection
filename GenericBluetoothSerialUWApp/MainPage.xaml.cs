@@ -477,7 +477,7 @@ namespace GenericBluetoothSerialUWApp
         {
             try
             {
-                CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=myiotservicebusstorage;AccountKey=iNGhr9f+2pCUcVO/jrbokvwKhgIGjwNXLQzuwoqygW0gCTGlpJbPUvtmhI/g3epJ3sq3v0os5TS8KsGklEgmpA==");
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=;AccountKey=");
 
                 // Create the table client.
                 CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
